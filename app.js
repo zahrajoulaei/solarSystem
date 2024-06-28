@@ -247,8 +247,19 @@ console.log("sum of satellites is:", satellitesSum)
 
 
 
-// 4. Write a conditional that checks if Mercury's radiusp is a string (remember the typeof command). If Mercury's radiusp is a string, change the value to be the same as its radiuse value. (radiusp is radius at the poles, radiuse is radius at the equator).
+// 4. Write a conditional that checks if Mercury's radiusp is a string (remember the typeof command).
+//  If Mercury's radiusp is a string, change the value to be the same as its radiuse value. (radiusp is radius at the poles, radiuse is radius at the equator).
+const mercurysRadiuspType = typeof(system.mercury.radiusp)
+if(mercurysRadiuspType === 'string'){
+    system.mercury.radiusp = system.mercury.radiuse;
+}
 
 // 5. console.log Mercury's radiusp (should be 2439, not 'same').
+console.log(system.mercury.radiusp)
 
 // 6. Find the difference between Jupiter's momentum and Pluto's momentum. (To get momentum, you'll want the product of velocity and mass).
+const JupiterMomentum = system.jupiter.velocity * system.jupiter.mass
+const PlutoMomentum = system.pluto.velocity * system.pluto.mass
+
+const momentumDifference = JupiterMomentum - PlutoMomentum
+console.log("Difference between Jupiter's and Pluto's momentum:", momentumDifference);
